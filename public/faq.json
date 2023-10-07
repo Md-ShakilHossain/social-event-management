@@ -1,0 +1,27 @@
+[
+    {
+      "question": "What is the event date for my wedding?",
+      "answer": "You can choose the event date during the booking process."
+    },
+    {
+      "question": "How do I make a payment?",
+      "answer": "You can make a payment online through our secure payment portal."
+    },
+    {
+      "question": "Can I cancel my booking?",
+      "answer": "Yes, you can cancel your booking, but there may be cancellation fees."
+    },
+    {
+      "question": "Can I customize the event package?",
+      "answer": "Yes, we offer customization options to tailor the event package to your specific needs."
+    },
+    {
+      "question": "How far in advance should I book?",
+      "answer": "It is recommended to book your event at least 6-12 months in advance to secure your preferred date and services."
+    },
+    {
+      "question": "What happens if the weather is bad on the event day?",
+      "answer": "We have contingency plans for outdoor events. In case of bad weather, we will work to ensure your event goes smoothly."
+    }
+  ]
+  
