@@ -2,7 +2,7 @@ import cover from '../../../assets/Images/Welcome.png'
 
 const Banner = () => {
     return (
-        <div className='w-full flex mt-8 md:px-20 md:py-5 items-center md:justify-between rounded-lg md:shadow-teal-200 shadow-lg'>
+        <div className='w-full flex mt-4 md:px-20 md:py-5 items-center md:justify-between rounded-lg md:shadow-teal-200 shadow-xl'>
             <div className='rounded-md p-5 md:w-1/2 '>
                 <h3 className='text-5xl md:text-4xl lg:text-7xl font-bold'> Welcome !</h3>
                 <p className='lg:text-xl mt-4 font-medium'>We are here to make your life easier.</p>
