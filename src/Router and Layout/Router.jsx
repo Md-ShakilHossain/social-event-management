@@ -6,6 +6,8 @@ import Home from "../Components/Pages/Home/Home";
 import AboutUs from "../Components/Pages/AboutUs/AboutUs";
 import Feedback from "../Components/Pages/Feeback/Feedback";
 import Offer from "../Components/Pages/Offer/Offer";
+import Login from "../Components/Login and Register/Login";
+import Register from "../Components/Login and Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
             {
                 path: '/offer',
                 element: <Offer></Offer>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     },

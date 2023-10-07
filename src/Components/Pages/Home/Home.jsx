@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import Banner from "./Banner";
 import Navbar from "../../Shared/Navbar";
+import Services from "./Services/Services";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <Navbar></Navbar>
+            <Services></Services>
         </div>
     );
 };

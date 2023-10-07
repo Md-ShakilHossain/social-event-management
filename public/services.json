@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "cover": "https://i.ibb.co/YT4nqZ4/Wedding-Event.webp",
+      "title": "Wedding",
+      "shortDescription": "Elegant wedding planning services",
+      "fullDescription": "We provide comprehensive wedding planning services to make your special day truly memorable. From venue selection to catering, we've got you covered.",
+      "totalPrice": 55000,
+      "advance": 18000
+    },
+    {
+      "id": 2,
+      "cover": "https://i.ibb.co/m8Jcf5J/Birthday.jpg",
+      "title": "Birthday Parties",
+      "shortDescription": "Fun-filled birthday party planning",
+      "fullDescription": "Celebrate birthdays in style with our party planning services. We create exciting themes and ensure a memorable experience for all.",
+      "totalPrice": 35000,
+      "advance": 12000
+    },
+    {
+      "id": 3,
+      "cover": "https://i.ibb.co/1KxFbBN/anniversary.webp",
+      "title": "Anniversaries",
+      "shortDescription": "Anniversaries party planing",
+      "fullDescription": "Plan the perfect anniversary celebration with us. We specialize in creating romantic and unforgettable moments for couples.",
+      "totalPrice": 25000,
+      "advance": 8000
+    },
+    {
+      "id": 4,
+      "cover": "https://i.ibb.co/X80RJMT/Engagement.jpg",
+      "title": "Engagement Parties",
+      "shortDescription": "Engagement party event planning",
+      "fullDescription": "Host a memorable engagement party with our event planning services. We take care of all the details to make it special for you.",
+      "totalPrice": 30000,
+      "advance": 10000
+    },
+    {
+      "id": 5,
+      "cover": "https://i.ibb.co/VH6yHwN/retirement.jpg",
+      "title": "Retirement Parties",
+      "shortDescription": "Farewell retirement party planning",
+      "fullDescription": "Celebrate retirement with a bang! Our party planning team will ensure a memorable farewell party for the retiree.",
+      "totalPrice": 18000,
+      "advance": 6000
+    },
+    {
+      "id": 6,
+      "cover": "https://i.ibb.co/Z6GT6Ln/babyshower.jpg",
+      "title": "Baby Shower",
+      "shortDescription": "Joyful baby shower planning",
+      "fullDescription": "Welcome the arrival of a new baby with a beautiful baby shower. We create a delightful and welcoming atmosphere for the celebration.",
+      "totalPrice": 12000,
+      "advance": 4000
+    }
+  ]
+  
