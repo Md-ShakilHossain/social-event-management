@@ -44,8 +44,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 lg:gap-8">
-                    <CgProfile className="md:text-2xl lg:text-4xl"></CgProfile>
+                    {
+                        user ? <img className="rounded-full w-10 h-10" src={user.photoURL} alt="" /> :
+                            <CgProfile className="md:text-2xl lg:text-4xl"></CgProfile>
+                    }
 
+                    {
+                        user ? <p>{user.displayName}</p> : ''
+                    }
                     {
                         user ? <button onClick={handleLogOut} className=" bg-red-500 lg:py-2 px-1 md:px-2 lg:px-4 text-xl font-semibold rounded-xl text-white">Log Out</button> :
                             <Link to='/login'><button className=" bg-red-500 lg:py-2 px-1 md:px-2 lg:px-4 text-xl font-semibold rounded-xl text-white">Login</button></Link>

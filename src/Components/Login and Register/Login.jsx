@@ -3,11 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { DataContext } from "../../MyProvider/MyProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../Firebase/firebase";
 
 const Login = () => {
 
     const { loginUser } = useContext(DataContext);
     const [error, setError] = useState('');
+
+    const provider = new GoogleAuthProvider();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -32,6 +36,18 @@ const Login = () => {
             })
             .catch(() => {
                 setError('Invalid Email or Password')
+            })
+    }
+
+    const handleLoginWithGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                console.log(result.user);
+
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
             })
     }
 
@@ -65,6 +81,10 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                </div>
+                <div>
+                    <h3 className="mt-5 text-2xl text-center font-semibold">OR</h3>
+                    <button onClick={handleLoginWithGoogle} className="bg-slate-300 mt-4 py-2 px-6 text-xl font-semibold rounded-lg shadow-xl">Login with Google</button>
                 </div>
                 <p className="mt-4 text-xl">New Here ? Please <span className="text-red-500"><Link to='/register'>Register</Link></span></p>
             </div>
