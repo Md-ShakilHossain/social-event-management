@@ -1,6 +1,14 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { DataContext } from "../../MyProvider/MyProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+
+    const { createUser } = useContext(DataContext);
+    const [error, setError] = useState('');
+    const [firebaseError, setFirebaseError] = useState('');
 
     const handleRegister = e => {
         e.preventDefault();
@@ -9,8 +17,34 @@ const Register = () => {
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
+        setError('');
+        setFirebaseError('');
+
+        if (password.length < 6) {
+            setError('Password length should be at least 6');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setError('Password should includes at least one capital letter');
+            return;
+        }
+        else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            setError('Password should includes at least one special character');
+            return;
+        }
 
         console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                toast('User Registered Successfully')
+                console.log(result.user);
+            })
+            .catch(() => {
+                setFirebaseError('Email already in used');
+            })
+
+
     }
 
     return (
@@ -39,12 +73,18 @@ const Register = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                            <div>
+                                <p className="text-red-500 font-semibold">{firebaseError}</p>
+                            </div>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                            <div>
+                                <p className="text-red-500 font-semibold">{error}</p>
+                            </div>
                         </div>
                         <div className="form-control">
                             <button className="btn btn-primary mt-4">Register</button>
@@ -53,6 +93,7 @@ const Register = () => {
                 </div>
                 <p className=" text-xl">Already have an account please <span className="text-red-500"><Link to='/login'>Login</Link></span></p>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

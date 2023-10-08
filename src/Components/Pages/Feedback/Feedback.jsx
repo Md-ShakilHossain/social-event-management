@@ -1,17 +1,13 @@
-import { useContext } from "react";
-import Navbar from "../../Shared/Navbar";
-import { DataContext } from "../../../MyProvider/MyProvider";
 
+import Navbar from "../../Shared/Navbar";
 
 const Feedback = () => {
-
-    const {user} = useContext(DataContext)
 
     return (
         <div>
             <Navbar></Navbar>
             <h3>this is from navbar</h3>
-            <p>user name is: {user}</p>
+            <p>user name is:</p>
         </div>
     );
 };
