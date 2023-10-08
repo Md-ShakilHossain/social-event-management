@@ -1,7 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { useContext } from "react";
+import { DataContext } from "../../MyProvider/MyProvider";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(DataContext)
 
     const links = <>
 
@@ -23,6 +27,14 @@ const Navbar = () => {
 
     </>
 
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+
+    }
+
     return (
         <div className="my-4 p-4 rounded-lg md:shadow-teal-200 shadow-xl">
             <div className="flex justify-between items-center">
@@ -33,7 +45,12 @@ const Navbar = () => {
                 </div>
                 <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 lg:gap-8">
                     <CgProfile className="md:text-2xl lg:text-4xl"></CgProfile>
-                    <Link to='/login'><button className=" bg-red-500 lg:py-2 px-1 md:px-2 lg:px-4 text-xl font-semibold rounded-xl text-white">Login</button></Link>
+
+                    {
+                        user ? <button onClick={handleLogOut} className=" bg-red-500 lg:py-2 px-1 md:px-2 lg:px-4 text-xl font-semibold rounded-xl text-white">Log Out</button> :
+                            <Link to='/login'><button className=" bg-red-500 lg:py-2 px-1 md:px-2 lg:px-4 text-xl font-semibold rounded-xl text-white">Login</button></Link>
+                    }
+
                 </div>
             </div>
         </div>

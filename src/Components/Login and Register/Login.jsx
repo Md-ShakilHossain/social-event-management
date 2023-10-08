@@ -1,14 +1,38 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { DataContext } from "../../MyProvider/MyProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+
+    const { loginUser } = useContext(DataContext);
+    const [error, setError] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        
+
+        setError('');
+
         console.log(email, password);
+
+        loginUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast('Logged in successfully')
+
+                navigate(location?.state ? location.state : '/');
+
+            })
+            .catch(() => {
+                setError('Invalid Email or Password')
+            })
     }
 
     return (
@@ -32,6 +56,11 @@ const Login = () => {
                             </label>
                             <input type="password" placeholder="password" name="password" className="input input-bordered" required />
                         </div>
+                        <div>
+                            {
+                                error && <p className="text-red-500">{error}</p>
+                            }
+                        </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
@@ -39,6 +68,7 @@ const Login = () => {
                 </div>
                 <p className="mt-4 text-xl">New Here ? Please <span className="text-red-500"><Link to='/register'>Register</Link></span></p>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

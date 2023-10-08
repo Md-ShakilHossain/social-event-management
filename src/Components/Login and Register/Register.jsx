@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../../MyProvider/MyProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -33,12 +34,15 @@ const Register = () => {
             return;
         }
 
-        console.log(name, photo, email, password);
 
         createUser(email, password)
             .then(result => {
                 toast('User Registered Successfully')
                 console.log(result.user);
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                })
             })
             .catch(() => {
                 setFirebaseError('Email already in used');
