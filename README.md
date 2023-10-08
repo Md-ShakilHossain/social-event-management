@@ -1,8 +1,14 @@
-# React + Vite
+### Project Name
+social-event-management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Live Link
+https://social-event-management-22910.web.app
 
-Currently, two official plugins are available:
+### Features of my project
+- We provide 6 social services
+- Implemented firebase authentication
+- Toggle between Login and Register page
+- Show toast whenever successfully register or login
+- Added details page as private root as well as Feedback and Offer page also
+- Added faq section
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
