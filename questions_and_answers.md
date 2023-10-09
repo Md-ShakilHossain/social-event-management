@@ -43,9 +43,9 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: A: `NaN`
+#### Answer: C: `"12"`
 
-<i>Here First argument is a number but second argument is string. And second argument also should be string.</i>
+<i>Here First argument is a number but second argument is string. It will convert 1 from number to string and then perform concatenate and it will give output as option C.</i>
 
 </p>
 </details>
