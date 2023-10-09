@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 const Service = ({service}) => {
     const {id, cover, title, shortDescription, totalPrice} = service;
     return (
-        <div className='rounded-xl md:shadow-teal-200 shadow-xl'>
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" className='rounded-xl md:shadow-teal-200 shadow-xl'>
             <img className='rounded-t-xl h-64' src={cover} alt="" />
             <h3 className='ml-2 text-2xl font-bold mt-4'>{title}</h3>
             <p className='ml-2 text-lg mt-2'>{shortDescription}</p>
