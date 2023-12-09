@@ -12,3 +12,10 @@ https://social-event-management-22910.web.app
 - Added details page as private root as well as Feedback and Offer page also
 - Added faq section
 
+### Technologies
+- React
+- Tailwind CSS
+- Daisyui
+
+
+
